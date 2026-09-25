@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#08080d">
+<meta name="description" content="Freeverse Club — a student community for creativity, technology and collaboration.">
+<title>FREEVERSE — Student Club</title>
+<style>
+:root{--bg:#07070b;--panel:#0d0d14;--line:#252532;--text:#f5f5f7;--muted:#9a9aa8;--a:#a78bfa;--b:#5eead4;--max:1180px}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+a{text-decoration:none;color:inherit}button{font:inherit}
+.container{width:min(var(--max),92%);margin:auto}
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;background:#07070bdd;backdrop-filter:blur(18px);border-bottom:1px solid #ffffff10}
+.navin{height:72px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:900;letter-spacing:2px;font-size:19px}.brand span{color:var(--a)}
+.navlinks{display:flex;gap:25px;color:#b8b8c4;font-size:13px}.navlinks a:hover{color:#fff}
+.menu{display:none;background:none;border:1px solid var(--line);color:#fff;padding:8px 10px;border-radius:10px}
+.hero{min-height:100vh;padding:150px 0 90px;display:grid;place-items:center;position:relative;background:
+radial-gradient(circle at 15% 25%,#6d3cff26 0,transparent 28%),
+radial-gradient(circle at 85% 25%,#16c9b526 0,transparent 26%),
+linear-gradient(180deg,#090910,#07070b)}
+.gridglow{position:absolute;inset:0;opacity:.18;background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:70px 70px;mask-image:linear-gradient(to bottom,black,transparent 75%)}
+.hero-content{position:relative;text-align:center;max-width:950px}
+.kicker{color:#b7b7c3;letter-spacing:4px;font-size:11px;font-weight:700;margin-bottom:20px}
+h1{font-size:clamp(64px,13vw,150px);line-height:.82;letter-spacing:-9px;font-weight:950}
+.gradient{background:linear-gradient(90deg,#fff,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h2{margin:32px 0 12px;font-size:clamp(23px,4vw,38px)}
+.hero p{max-width:720px;margin:auto;color:#a8a8b5;font-size:17px}
+.actions{margin-top:32px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.btn{padding:13px 20px;border-radius:10px;border:1px solid #3b3b49;font-size:13px;font-weight:800;transition:.2s;display:inline-flex;gap:8px;align-items:center}
+.btn:hover{transform:translateY(-3px);border-color:#777}.primary{background:#fff;color:#08080d;border-color:#fff}
+section{padding:105px 0;border-top:1px solid #ffffff0b}.eyebrow{font-size:11px;letter-spacing:3px;color:var(--a);font-weight:800;margin-bottom:13px}
+h2.title{font-size:clamp(38px,6vw,68px);line-height:1;letter-spacing:-3px;margin-bottom:20px}
+.lead{max-width:760px;color:var(--muted);font-size:17px;margin-bottom:42px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{background:linear-gradient(145deg,#11111a,#0a0a0f);border:1px solid var(--line);border-radius:18px;padding:28px;transition:.25s}
+.card:hover{transform:translateY(-5px);border-color:#55556b}.icon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:#a78bfa14;color:var(--a);font-weight:900}
+.card h3{margin:22px 0 8px;font-size:20px}.card p{color:#92929e;font-size:14px}.num{color:#666676;font-size:11px;letter-spacing:2px}
+.dark{background:#0a0a10}
+.timeline{display:grid;gap:12px}.event{display:grid;grid-template-columns:140px 1fr auto;gap:20px;align-items:center;padding:22px;border:1px solid var(--line);border-radius:16px;background:#0c0c12}.event .date{color:var(--b);font-size:12px;font-weight:800;letter-spacing:1px}.event p{color:#92929e;font-size:13px}.pill{font-size:10px;letter-spacing:1px;padding:7px 10px;border:1px solid #343444;border-radius:999px;color:#bbb}
+.projectgrid{display:grid;grid-template-columns:1.4fr .8fr .8fr;gap:14px}.project{min-height:230px;border-radius:18px;padding:28px;border:1px solid var(--line);background:linear-gradient(145deg,#151522,#0a0a0f);display:flex;flex-direction:column;justify-content:flex-end}.project:first-child{min-height:320px;background:radial-gradient(circle at 80% 20%,#a78bfa22,transparent 30%),linear-gradient(145deg,#171523,#0a0a0f)}.project small{color:var(--b);letter-spacing:2px}.project h3{font-size:25px;margin:8px 0}.project p{color:#9a9aa5;font-size:13px}
+.team{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.member{border:1px solid var(--line);border-radius:18px;padding:20px;text-align:center;background:#0d0d14}.avatar{height:145px;border-radius:14px;background:linear-gradient(135deg,#191923,#0b0b10);display:grid;place-items:center;color:#686878;font-size:38px;font-weight:900;margin-bottom:15px}.member h3{font-size:16px}.member p{color:#777786;font-size:12px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:30px}.stat{padding:24px;border:1px solid var(--line);border-radius:16px;text-align:center}.stat strong{display:block;font-size:34px}.stat span{color:#777786;font-size:11px;letter-spacing:1px}
+.join{text-align:center;padding:120px 0;background:radial-gradient(circle at 50% 0,#5b35d522,transparent 45%)}.join .lead{margin-left:auto;margin-right:auto}.contact{margin-top:28px;display:flex;justify-content:center;gap:25px;flex-wrap:wrap;color:#777786;font-size:12px}
+footer{padding:30px 0;border-top:1px solid var(--line);color:#676775;font-size:11px}.foot{display:flex;justify-content:space-between;gap:20px}
+.reveal{opacity:0;transform:translateY(20px);transition:.7s}.reveal.show{opacity:1;transform:none}
+#top{position:fixed;right:20px;bottom:20px;width:42px;height:42px;border-radius:50%;border:1px solid #444452;background:#11111a;color:#fff;z-index:30;display:none}
+@media(max-width:800px){.navlinks{display:none;position:absolute;top:72px;left:4%;right:4%;padding:18px;flex-direction:column;background:#101018;border:1px solid var(--line);border-radius:14px}.navlinks.open{display:flex}.menu{display:block}.cards,.team,.stats,.projectgrid{grid-template-columns:1fr 1fr}.project:first-child{min-height:230px}.event{grid-template-columns:1fr}.event .pill{width:max-content}}
+@media(max-width:520px){h1{letter-spacing:-5px}.cards,.team,.stats,.projectgrid{grid-template-columns:1fr}.hero{padding-top:130px}.event{padding:18px}.foot{flex-direction:column}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="container navin">
+<a class="brand" href="#home">FREE<span>VERSE</span></a>
+<nav class="navlinks" id="navlinks"><a href="#about">About</a><a href="#events">Events</a><a href="#projects">Projects</a><a href="#team">Team</a><a href="#join">Join</a></nav>
+<button class="menu" id="menu" aria-label="Open menu">☰</button>
+</div></header>
+
+<main>
+<section class="hero" id="home"><div class="gridglow"></div><div class="container hero-content reveal">
+<div class="kicker">KANGEYAM INSTITUTE OF TECHNOLOGY • STUDENT COMMUNITY</div>
+<h1>FREE<br><span class="gradient">VERSE</span></h1>
+<h2>Create. Connect. Explore.</h2>
+<p>A student-powered space where ideas become projects, creativity meets technology, and people build together.</p>
+<div class="actions"><a class="btn primary" href="#about">Explore Freeverse ↓</a><a class="btn" href="#join">Join the Community</a></div>
+</div></section>
+
+<section id="about"><div class="container">
+<div class="eyebrow">01 / ABOUT</div><h2 class="title reveal">A club without limits.</h2>
+<p class="lead reveal">Freeverse brings together students who want to create, experiment, collaborate and learn. From technology and design to media and events, the community is built around action.</p>
+<div class="cards">
+<div class="card reveal"><div class="icon">01</div><h3>Create</h3><p>Turn raw ideas into websites, apps, content, prototypes and experiences.</p></div>
+<div class="card reveal"><div class="icon">02</div><h3>Connect</h3><p>Find teammates, mentors and friends with different skills and perspectives.</p></div>
+<div class="card reveal"><div class="icon">03</div><h3>Explore</h3><p>Try new tools, discover new fields and learn by building real things.</p></div>
+</div>
+<div class="stats">
+<div class="stat reveal"><strong>01</strong><span>COMMUNITY</span></div><div class="stat reveal"><strong>∞</strong><span>IDEAS</span></div><div class="stat reveal"><strong>24/7</strong><span>CURIOSITY</span></div><div class="stat reveal"><strong>1</strong><span>SHARED SPACE</span></div>
+</div>
+</div></section>
+
+<section class="dark" id="events"><div class="container">
+<div class="eyebrow">02 / EVENTS</div><h2 class="title reveal">Build. Learn. Show.</h2><p class="lead reveal">A sample event lineup is ready. Replace the dates and venue with your official club schedule before submission.</p>
+<div class="timeline">
+<div class="event reveal"><div class="date">COMING SOON</div><div><h3>Freeverse Launch</h3><p>Meet the community, discover the vision and find your place.</p></div><span class="pill">COMMUNITY</span></div>
+<div class="event reveal"><div class="date">WORKSHOP</div><div><h3>Creative Tech Lab</h3><p>A hands-on session around modern tools, ideas and rapid prototyping.</p></div><span class="pill">LEARN</span></div>
+<div class="event reveal"><div class="date">CHALLENGE</div><div><h3>Build Something</h3><p>Form a team, pick a problem and turn an idea into a demo.</p></div><span class="pill">BUILD</span></div>
+</div>
+</div></section>
+
+<section id="projects"><div class="container">
+<div class="eyebrow">03 / PROJECTS</div><h2 class="title reveal">Ideas in motion.</h2><p class="lead reveal">Use this section to showcase your club's actual competition entries, workshops, apps and creative work.</p>
+<div class="projectgrid">
+<article class="project reveal"><small>FEATURED PROJECT</small><h3>Freeverse Innovation Lab</h3><p>A collaborative space for turning student ideas into working prototypes.</p></article>
+<article class="project reveal"><small>01</small><h3>Campus Connect</h3><p>Concept project for student collaboration and discovery.</p></article>
+<article class="project reveal"><small>02</small><h3>Creative Media</h3><p>Stories, visuals and digital experiences made by students.</p></article>
+</div>
+</div></section>
+
+<section class="dark" id="team"><div class="container">
+<div class="eyebrow">04 / TEAM</div><h2 class="title reveal">People make the verse.</h2><p class="lead reveal">Replace these placeholders with your official office-bearers and team photographs.</p>
+<div class="team">
+<div class="member reveal"><div class="avatar">01</div><h3>Club President</h3><p>NAME</p></div>
+<div class="member reveal"><div class="avatar">02</div><h3>Vice President</h3><p>NAME</p></div>
+<div class="member reveal"><div class="avatar">03</div><h3>Secretary</h3><p>NAME</p></div>
+<div class="member reveal"><div class="avatar">04</div><h3>Creative / Tech Lead</h3><p>NAME</p></div>
+</div>
+</div></section>
+
+<section class="join" id="join"><div class="container reveal">
+<div class="eyebrow">05 / JOIN</div><h2 class="title">Your idea belongs here.</h2>
+<p class="lead">Whether you code, design, write, organise, shoot, edit or simply love trying new things — Freeverse is built for you.</p>
+<div class="actions"><a class="btn primary" href="#home">JOIN FREEVERSE ↗</a><a class="btn" href="mailto:freeverse@kit.edu">Contact Club</a></div>
+<div class="contact"><span>Instagram: @freeverse_club</span><span>Email: freeverse@kit.edu</span><span>KIT • Tamil Nadu</span></div>
+</div></section>
+</main>
+
+<footer><div class="container foot"><span>FREEVERSE CLUB</span><span>© 2026 • Create. Connect. Explore.</span></div></footer>
+<button id="top" aria-label="Back to top">↑</button>
+<script>
+const menu=document.getElementById('menu'),links=document.getElementById('navlinks');
+menu.onclick=()=>links.classList.toggle('open');
+links.querySelectorAll('a').forEach(a=>a.onclick=()=>links.classList.remove('open'));
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(e=>obs.observe(e));
+const top=document.getElementById('top');
+addEventListener('scroll',()=>top.style.display=scrollY>500?'grid':'none');
+top.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+</script>
+</body>
+</html>
