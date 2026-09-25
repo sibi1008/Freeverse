@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freeverse | Student Freelancing Community</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:#080b18;color:#f5f7ff;line-height:1.6}
+a{text-decoration:none;color:inherit}
+nav{position:sticky;top:0;z-index:10;background:rgba(8,11,24,.94);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;padding:18px 7%;border-bottom:1px solid #20263d}
+.logo{font-size:25px;font-weight:900;letter-spacing:1px}.logo span{color:#7c5cff}
+.navlinks{display:flex;gap:25px;list-style:none;color:#c7cbe0}.navlinks a:hover{color:#9b86ff}
+.btn{display:inline-block;background:#7c5cff;color:white;padding:12px 20px;border-radius:10px;font-weight:bold;border:0;cursor:pointer}
+.hero{min-height:650px;padding:90px 7%;display:flex;align-items:center;justify-content:space-between;gap:50px;background:radial-gradient(circle at 75% 40%,#31206b 0,#11142b 35%,#080b18 70%)}
+.hero-text{max-width:650px}.eyebrow{color:#9b86ff;font-weight:bold;letter-spacing:3px}
+h1{font-size:clamp(45px,7vw,78px);line-height:1.05;margin:18px 0}h1 span{color:#8b6cff}
+.hero-text p{font-size:19px;color:#b9bed3;max-width:600px}
+.actions{display:flex;gap:15px;margin-top:30px;flex-wrap:wrap}
+.outline{border:1px solid #6552bd;padding:11px 20px;border-radius:10px;color:#ddd7ff}
+.hero-art{width:350px;height:350px;border:1px solid #42356f;border-radius:35px;background:linear-gradient(145deg,#171b38,#0d1022);display:flex;align-items:center;justify-content:center;box-shadow:0 0 70px #30216d}
+.hero-art div{text-align:center}.hero-art strong{display:block;font-size:70px}.hero-art p{color:#aaa5d8}
+section{padding:85px 7%}.section-head{text-align:center;max-width:750px;margin:0 auto 45px}.section-head small{color:#9b86ff;font-weight:bold;letter-spacing:2px}.section-head h2{font-size:42px;margin:8px 0}.section-head p{color:#aeb4ca}
+.about{background:#0d1122}.about-grid,.features,.events,.freelancers{display:grid;gap:22px}.about-grid{grid-template-columns:1fr 1fr;max-width:1100px;margin:auto}.card{background:#12172b;border:1px solid #252c48;border-radius:18px;padding:28px}.card h3{font-size:23px;margin-bottom:10px}.card p{color:#adb4ca}
+.features{grid-template-columns:repeat(4,1fr);max-width:1200px;margin:auto}.feature{text-align:center}.icon{font-size:35px;margin-bottom:10px}.feature h3{margin-bottom:7px}.feature p{color:#aeb4ca}
+.events{grid-template-columns:repeat(4,1fr);max-width:1200px;margin:auto}.event span{color:#8b6cff;font-size:14px;font-weight:bold}.event h3{margin:12px 0}.event p{color:#aeb4ca}
+.freelancer-section{background:#0d1122}.search{display:flex;gap:12px;max-width:800px;margin:0 auto 35px}.search input,.search select{width:100%;padding:15px;border-radius:10px;border:1px solid #303855;background:#11162a;color:white}.freelancers{grid-template-columns:repeat(3,1fr);max-width:1200px;margin:auto}.profile{text-align:left}.avatar{width:65px;height:65px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#7c5cff;font-size:20px;font-weight:bold;margin-bottom:15px}.role{color:#9b86ff;font-weight:bold}.tags{display:flex;gap:7px;flex-wrap:wrap;margin:15px 0}.tag{background:#202744;padding:5px 9px;border-radius:20px;font-size:12px;color:#d5d9e9}.profile-actions{display:flex;gap:10px;margin-top:18px}.profile-actions button{padding:9px 15px;border-radius:8px;border:1px solid #454e72;background:#171c31;color:white;cursor:pointer}.profile-actions button:last-child{background:#7c5cff;border-color:#7c5cff}
+.join{background:linear-gradient(110deg,#221657,#11142b);text-align:center}.join h2{font-size:45px;margin:10px}.join p{color:#c1c5d7;margin-bottom:25px}
+.contact{text-align:center}.contact p{color:#b6bbcf;margin:8px}
+footer{text-align:center;padding:35px 7%;background:#050710;border-top:1px solid #20263d;color:#8f95aa}footer .logo{margin-bottom:10px}
+@media(max-width:900px){.navlinks{display:none}.hero{flex-direction:column;text-align:center}.hero-art{width:280px;height:280px}.actions{justify-content:center}.features,.events{grid-template-columns:1fr 1fr}.freelancers,.about-grid{grid-template-columns:1fr}}
+@media(max-width:600px){section{padding:65px 5%}.features,.events,.freelancers{grid-template-columns:1fr}.search{flex-direction:column}h1{font-size:48px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo"><span>FREE</span>VERSE</div>
+  <ul class="navlinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#events">Events</a></li>
+    <li><a href="#freelancers">Freelancers</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="btn" href="#join">Join Freeverse</a>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-text">
+    <div class="eyebrow">FREEVERSE COMMUNITY</div>
+    <h1>Turn Your <span>Skills</span> Into Opportunities.</h1>
+    <p>A student-powered community where creativity, technology, freelancing and collaboration come together.</p>
+    <div class="actions">
+      <a class="btn" href="#join">Join Freeverse 🚀</a>
+      <a class="outline" href="#freelancers">Explore Freelancers</a>
+    </div>
+  </div>
+  <div class="hero-art">
+    <div><strong>✦</strong><p>Learn • Create • Freelance</p></div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="section-head"><small>ABOUT FREEVERSE</small><h2>What is Freeverse?</h2><p>A student community designed to turn talent into real-world opportunities.</p></div>
+  <div class="about-grid">
+    <div class="card"><h3>🎯 Our Vision</h3><p>Empower students to transform their skills, creativity and ideas into meaningful opportunities.</p></div>
+    <div class="card"><h3>🚀 Our Mission</h3><p>Build a strong student freelancing ecosystem through learning, collaboration, innovation and networking.</p></div>
+    <div class="card"><h3>💡 Why Join?</h3><p>Build your portfolio, meet talented students, participate in events and discover freelancing opportunities.</p></div>
+    <div class="card"><h3>🤝 Community</h3><p>Connect with students from different skills and work together on exciting projects.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="section-head"><small>WHY FREEVERSE</small><h2>Grow. Connect. Create.</h2></div>
+  <div class="features">
+    <div class="card feature"><div class="icon">💼</div><h3>Freelancing</h3><p>Explore opportunities and connect with potential clients.</p></div>
+    <div class="card feature"><div class="icon">🧠</div><h3>Learn Skills</h3><p>Improve technical and creative skills through activities.</p></div>
+    <div class="card feature"><div class="icon">🌐</div><h3>Networking</h3><p>Build connections with talented students.</p></div>
+    <div class="card feature"><div class="icon">🏆</div><h3>Competitions</h3><p>Showcase your creativity through exciting events.</p></div>
+  </div>
+</section>
+
+<section id="events" class="about">
+  <div class="section-head"><small>EVENTS & ACTIVITIES</small><h2>Learn. Compete. Experience.</h2></div>
+  <div class="events">
+    <div class="card event"><span>01</span><h3>Workshops</h3><p>Practical sessions on technology, freelancing and creative skills.</p></div>
+    <div class="card event"><span>02</span><h3>Competitions</h3><p>Technical and creative challenges for students.</p></div>
+    <div class="card event"><span>03</span><h3>Seminars</h3><p>Learn from professionals and industry experts.</p></div>
+    <div class="card event"><span>04</span><h3>Community Events</h3><p>Technical and non-technical activities for everyone.</p></div>
+  </div>
+</section>
+
+<section class="freelancer-section" id="freelancers">
+  <div class="section-head"><small>⭐ MAIN SECTION</small><h2>Find Student Freelancers</h2><p>Discover student talent, skills and portfolios for your next project.</p></div>
+  <div class="search">
+    <input id="search" type="text" placeholder="Search freelancer or skill...">
+    <select id="filter">
+      <option value="all">All Skills</option><option value="Web Development">Web Development</option><option value="UI/UX">UI/UX</option><option value="Graphic Design">Graphic Design</option><option value="Video Editing">Video Editing</option><option value="Coding">Coding</option><option value="AI / ML">AI / ML</option>
+    </select>
+  </div>
+  <div class="freelancers" id="list">
+    <div class="card profile" data-skill="Web Development"><div class="avatar">AK</div><h3>Arun Kumar</h3><div class="role">Web Developer</div><div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div><p>Modern and responsive websites for students and businesses.</p><div class="profile-actions"><button>Portfolio</button><button>Hire</button></div></div>
+    <div class="card profile" data-skill="UI/UX"><div class="avatar">SP</div><h3>Sanjana P</h3><div class="role">UI/UX Designer</div><div class="tags"><span class="tag">Figma</span><span class="tag">UI Design</span><span class="tag">UX</span></div><p>Clean, modern and user-friendly digital experiences.</p><div class="profile-actions"><button>Portfolio</button><button>Hire</button></div></div>
+    <div class="card profile" data-skill="AI / ML"><div class="avatar">DV</div><h3>Deepak V</h3><div class="role">AI & ML Developer</div><div class="tags"><span class="tag">Python</span><span class="tag">AI</span><span class="tag">ML</span></div><p>Building intelligent solutions using AI and machine learning.</p><div class="profile-actions"><button>Portfolio</button><button>Hire</button></div></div>
+  </div>
+</section>
+
+<section class="join" id="join">
+  <p>READY TO START?</p><h2>Your Skills Can Create Your Future.</h2><p>Join Freeverse and showcase what you can create.</p><a class="btn" href="#contact">Join Freeverse 🚀</a>
+</section>
+
+<section class="contact" id="contact">
+  <div class="section-head"><small>GET IN TOUCH</small><h2>Connect With Freeverse</h2></div>
+  <p>📍 Kangeyam Institute of Technology</p><p>🚀 Freeverse Club</p><p>🌐 Freelancing & Student Community</p>
+</section>
+
+<footer>
+  <div class="logo"><span>FREE</span>VERSE</div>
+  <p>© 2026 Freeverse Club • Futurix – Kangeyam Institute of Technology</p>
+</footer>
+
+<script>
+const search=document.getElementById("search"), filter=document.getElementById("filter"), cards=[...document.querySelectorAll(".profile")];
+function update(){
+  const q=search.value.toLowerCase(), f=filter.value;
+  cards.forEach(c=>{
+    const text=c.innerText.toLowerCase(), skill=c.dataset.skill;
+    c.style.display=(text.includes(q)&&(f==="all"||skill===f))?"block":"none";
+  });
+}
+search.addEventListener("input",update); filter.addEventListener("change",update);
+</script>
+</body>
+</html>
